@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import { API_KEY } from './secret';
 
 function Main() {
   let [ques, setQues] = useState({});
@@ -11,7 +12,7 @@ function Main() {
     let data = await axios.get('https://api.api-ninjas.com/v1/trivia',
       {
         headers: {
-          'X-Api-Key': 'eTxtJnFfSGb4+N7kL8ywiw==hVHBmsslNsdxMWWn'
+          'X-Api-Key': API_KEY
         }
       });
     setQues(...data.data);
